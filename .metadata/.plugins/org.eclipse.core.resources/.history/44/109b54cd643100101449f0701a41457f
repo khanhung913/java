@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div>社員番号を入力してください</div>
+	<form method="post" action="/check">
+		<input type="number" name="id" required>
+		<button>確認</button>
+	</form>
+</body>
+
+</html>

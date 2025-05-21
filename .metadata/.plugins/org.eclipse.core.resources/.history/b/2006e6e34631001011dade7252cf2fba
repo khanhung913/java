@@ -1,0 +1,10 @@
+package jp.co.sss.shop.controller;
+
+import org.springframework.stereotype.Controller;
+
+import jp.co.sss.shop.repository.ItemRepositoty;
+
+@Controller
+public class ItemController {
+	ItemRepositoty itemRepositoty;
+}

@@ -1,0 +1,44 @@
+package jp.co.notebook.bean;
+
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+
+public class UserBean {
+	@NotNull
+	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+	private String email;
+	@NotNull
+	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "半角英字を入力")
+	@Max(value = 16, message = "最大16文字")
+	@Min(value = 4, message = "最低4文字を入力してください")
+	private String password;
+	@NotNull
+	private String name;
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

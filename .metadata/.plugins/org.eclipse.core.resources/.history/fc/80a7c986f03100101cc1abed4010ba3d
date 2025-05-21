@@ -1,0 +1,14 @@
+package jp.co.notebook.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "note")
+public class Note {
+	private long id;
+	@ManyToOne
+	private User user;
+
+}

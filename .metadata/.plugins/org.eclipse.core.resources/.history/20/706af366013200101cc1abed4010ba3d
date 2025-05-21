@@ -1,0 +1,30 @@
+package jp.co.notebook.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import jp.co.notebook.entity.User;
+import jp.co.notebook.repository.UserRepository;
+
+@Service
+public class UserService {
+	@Autowired
+	UserRepository userRepository;
+
+	public void handleSaveUser(User user) {
+		this.userRepository.save(user);
+	}
+
+	public User handleFindByEmail(String email) {
+		return this.userRepository.findByEmail(email);
+	}
+
+	public boolean handleCheckLogin(String email, String password) {
+		User user = this.userRepository.findByEmail(email);
+		if (user != null && user.getPassword().equals(password)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+}

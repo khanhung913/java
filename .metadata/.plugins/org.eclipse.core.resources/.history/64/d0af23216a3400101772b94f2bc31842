@@ -1,0 +1,19 @@
+package jp.co.sss.shop.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "items_with_categories")
+public class ItemWithCategory {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "seq_items_with_categories_gen")
+	@SequenceGenerator(name="seq_items_with_categories_gen",sequenceName = "seq_items_with_categories",allocationSize = 1);
+	private Integer id;
+	private String name;
+	private Integer price;
+}

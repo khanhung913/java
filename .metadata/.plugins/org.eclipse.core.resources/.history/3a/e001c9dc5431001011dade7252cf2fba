@@ -1,0 +1,45 @@
+package jp.co.attendance.Controller;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jp.co.attendance.Domain.Attendance;
+import jp.co.attendance.Domain.Employee;
+import jp.co.attendance.Service.AttendanceService;
+import jp.co.attendance.Service.EmployeeService;
+
+@Controller
+public class UserController {
+	@Autowired
+	EmployeeService employeeService;
+
+	@Autowired
+	AttendanceService attendanceService;
+
+	@RequestMapping("/")
+	public String homePage() {
+		return "index";
+	}
+
+	@RequestMapping("/checkin")
+	public String checkin() {
+		Employee employee = this.employeeService.findEmployee(1);
+		Date date = new Date();
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		String newdate = df.format(date);
+		Attendance attendance = new Attendance();
+		Attendance attendanceTemp = this.attendanceService.
+		
+		if()
+			attendance.setComein(date);
+		attendance.setEmployee(employee);
+		attendance.setAttendance_date(newdate);
+		this.attendanceService.handleSave(attendance);
+		return "index";
+	}
+
+}

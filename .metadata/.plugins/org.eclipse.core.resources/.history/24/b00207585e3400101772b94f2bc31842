@@ -1,0 +1,31 @@
+package jp.co.notebook.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jp.co.notebook.entity.User;
+import jp.co.notebook.service.NoteService;
+import jp.co.notebook.service.RoleService;
+import jp.co.notebook.service.UserService;
+
+@Controller
+public class AdminController {
+	@Autowired
+	NoteService noteService;
+	@Autowired
+	UserService userService;
+	@Autowired
+	RoleService roleService;
+
+	@GetMapping("/admin/showAllUser")
+	public String showAllUser(Model model) {
+		List<User> users = this.userService.handleFindAllUser();
+		model.addAttribute("users", users);
+		return "admin/user_show";
+	}
+
+}

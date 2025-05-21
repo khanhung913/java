@@ -1,0 +1,79 @@
+package jp.co.notebook.entity;
+
+import java.util.Date;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "note")
+public class Note {
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "note_id_seq")
+	@SequenceGenerator(name = "note_id_seq", sequenceName = "note_id_seq", allocationSize = 1)
+	private long id;
+	@ManyToOne
+	@NotNull
+	private User user;
+	@NotNull
+	private Date noteDate;
+	@NotNull
+	private String title;
+	@Lob
+	@Column(columnDefinition = "CLOB")
+	@NotNull
+	private String note;
+
+	public Note() {
+
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Date getNoteDate() {
+		return noteDate;
+	}
+
+	public void setNoteDate(Date noteDate) {
+		this.noteDate = noteDate;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+}

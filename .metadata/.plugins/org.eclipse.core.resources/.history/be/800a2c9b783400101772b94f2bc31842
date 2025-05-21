@@ -1,0 +1,8 @@
+package jp.co.notebook.bean;
+
+public class CreateUserBean {
+	private String password;
+	private String name;
+	private String email;
+	private long role;
+}

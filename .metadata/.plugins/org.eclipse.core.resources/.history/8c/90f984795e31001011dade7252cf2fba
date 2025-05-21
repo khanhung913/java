@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<a href="/checkin"><button>出勤</button></a>
+	<a href="/checkout"><button>退勤</button></a>
+</body>
+
+</html>

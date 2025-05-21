@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="hhtp://wwthymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<div>商品の新規登録完了</div>
+	<p>
+	<h2>登録が完了しました</h2>
+	</p>
+	<br />
+	<a th:href="@{/regist/input/hidden}" th:text="入力画面へ戻ります"></a>
+</body>
+
+</html>

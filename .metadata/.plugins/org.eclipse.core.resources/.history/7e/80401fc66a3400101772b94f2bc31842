@@ -1,0 +1,18 @@
+package jp.co.sss.shop.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jp.co.sss.shop.repository.ItemWithCategoryRepository;
+
+@Controller
+public class ItemWithCategoryController {
+	@Autowired
+	ItemWithCategoryRepository repository;
+
+	@RequestMapping("/items/findItemAndCategory")
+	public String showItemAndCategory() {
+
+	}
+}

@@ -1,0 +1,22 @@
+package jp.co.notebook.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import jp.co.notebook.service.NoteService;
+import jp.co.notebook.service.RoleService;
+import jp.co.notebook.service.UserService;
+
+@Controller
+public class AdminController {
+	@Autowired
+	NoteService noteService;
+	@Autowired
+	UserService userService;
+	@Autowired
+	RoleService roleService;
+	
+	@GetMapping("/admin/showAllUser")
+
+}

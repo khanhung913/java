@@ -1,0 +1,19 @@
+INDEX VERSION 1.134
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1425192628.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2318114931.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3325652098.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2299474885.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3808101368.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2474577343.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\880419042.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3208447863.index
+\co.jp.appleshop\src\main\java
+C:\pleiades\2023-09\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1625332703.index
+\co.jp.appleshop\src\main\java

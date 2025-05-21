@@ -1,0 +1,20 @@
+package jp.co.notebook.repository;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import jp.co.notebook.entity.Note;
+import jp.co.notebook.entity.User;
+
+public interface NoteRepository extends JpaRepository<Note, Long> {
+	List<Note> findByUserOrderByNoteDateDesc(User user);
+
+	Note findById(long id);
+
+	//	@Query("SELECT u FROM Note u WHERE u.note_date >= :date")
+	Note findByNoteDate(Date noteDate);
+
+	void deleteByUser(User user);
+}

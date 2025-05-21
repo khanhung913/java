@@ -1,0 +1,5 @@
+package jp.co.notebook.config;
+
+public class WebSecuriryConfig {
+
+}

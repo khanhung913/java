@@ -1,0 +1,13 @@
+package jp.co.sss.shop.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import jp.co.sss.shop.repository.ItemWithCategoryRepository;
+
+@Controller
+public class CreateController {
+	@Autowired
+	ItemWithCategoryRepository repository;
+
+}

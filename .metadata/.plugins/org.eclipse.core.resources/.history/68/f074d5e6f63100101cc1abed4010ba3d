@@ -1,0 +1,12 @@
+package jp.co.notebook.Bean;
+
+import jakarta.validation.constraints.NotNull;
+
+public class UserBean {
+	@NotNull
+	private String email;
+	@NotNull
+	private String password;
+	@NotNull
+	private String name;
+}

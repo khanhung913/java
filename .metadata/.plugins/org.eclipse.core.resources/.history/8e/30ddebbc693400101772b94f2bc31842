@@ -1,0 +1,10 @@
+package jp.co.sss.shop.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "items_with_categories")
+public class ItemWithCategory {
+
+}

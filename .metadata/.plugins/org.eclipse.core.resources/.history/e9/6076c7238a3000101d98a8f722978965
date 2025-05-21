@@ -1,0 +1,15 @@
+package question04;
+
+import java.sql.Date;
+
+public class SystemMain04 {
+
+	public static void main(String[] args) {
+		
+		Date date = new Date(0);
+		System.out.println(date);
+
+	}
+}
+
+

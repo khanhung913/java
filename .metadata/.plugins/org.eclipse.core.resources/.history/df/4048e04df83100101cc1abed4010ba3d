@@ -1,0 +1,9 @@
+package jp.co.notebook.Repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import jp.co.notebook.Entity.User;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+}

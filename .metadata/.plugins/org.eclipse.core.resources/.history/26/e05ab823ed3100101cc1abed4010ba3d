@@ -1,0 +1,13 @@
+package jp.co.sss.shop.bean;
+
+import java.io.Serializable;
+
+public class ItemBean implements Serializable {
+	private Integer id;
+	private String name;
+	private Integer price;
+
+	public ItemBean() {
+
+	}
+}

@@ -1,0 +1,12 @@
+package jp.co.notebook.service;
+
+import java.io.Serializable;
+import java.util.UUID;
+
+import org.hibernate.id.IdentityGenerator;
+
+public class UuidGenerator extends IdentityGenerator {
+	public Serializable generate() {
+		return UUID.randomUUID().toString();
+	}
+}

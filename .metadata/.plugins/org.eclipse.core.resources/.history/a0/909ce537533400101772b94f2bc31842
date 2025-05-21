@@ -1,0 +1,46 @@
+package jp.co.notebook.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import jp.co.notebook.entity.Note;
+import jp.co.notebook.entity.User;
+import jp.co.notebook.repository.NoteRepository;
+
+@Service
+public class NoteService {
+	@Autowired
+	NoteRepository noteRepository;
+
+	public List<Note> handleFindByUserOrderByIdMax5(User user) {
+		List<Note> list = this.noteRepository.findByUserOrderByIdDesc(user);
+		while (list.size() > 7) {
+			list.remove(list.size() - 1);
+		}
+		return list;
+	}
+
+	public List<Note> handleFindAllByUser(User user) {
+		return this.noteRepository.findByUserOrderByIdDesc(user);
+	}
+
+	public long handleUpdateNote(long id, Note note) {
+		this.noteRepository.deleteById(id);
+		this.noteRepository.save(note);
+		return this.noteRepository.findByNotedate(note.getNote_date());
+	}
+
+	public void handleSaveNote(Note note) {
+		this.noteRepository.save(note);
+	}
+
+	public Note handleFindById(long id) {
+		return this.noteRepository.findById(id);
+	}
+
+	public void handleRemoveById(long id) {
+		this.noteRepository.deleteById(id);
+	}
+}

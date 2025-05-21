@@ -1,0 +1,23 @@
+package jp.co.notebook.repository;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+
+import jp.co.notebook.entity.Note;
+import jp.co.notebook.entity.User;
+
+public interface NoteRepository extends JpaRepository<Note, Long> {
+	List<Note> findByUserOrderByIdDesc(User user);
+
+	Note findById(long id);
+
+	@Query("SELECT u FROM User u WHERE u.age >= :age")
+	Note findByNotedate(@Param("date") Date date);
+
+	@Query("SELECT u FROM User u WHERE u.age >= :age")
+	List<User> findUsersByAgeGreaterThan(@Param("age") int age);
+}

@@ -1,0 +1,38 @@
+package jp.co.attendance.Controller;
+
+import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import jp.co.attendance.Domain.Attendance;
+import jp.co.attendance.Domain.Employee;
+import jp.co.attendance.Service.AttendanceService;
+import jp.co.attendance.Service.EmployeeService;
+
+@Controller
+public class UserController {
+	@Autowired
+	EmployeeService employeeService;
+
+	@Autowired
+	AttendanceService attendanceService;
+
+	@RequestMapping("/")
+	public String homePage() {
+		return "index";
+	}
+
+	@RequestMapping("/checkin")
+	public String checkin() {
+		Employee employee = this.employeeService.findEmployee(1);
+		Date date = new Date();
+		Attendance attendance = new Attendance();
+		attendance.setComein(date);
+		attendance.setEmployee(employee);
+		this.attendanceService.handleSave(attendance);
+		return "index";
+	}
+
+}
