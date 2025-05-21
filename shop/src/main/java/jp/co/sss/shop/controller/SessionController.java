@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import jp.co.sss.shop.form.LoginForm;
+import jp.co.sss.shop.form.LoginFormWithAnnotation;
 import jp.co.sss.shop.form.LoginFormWithValidation;
 
 @Controller
@@ -87,6 +88,25 @@ public class SessionController {
 			return "redirect:/";
 		} else {
 			return "session/login_with_validation";
+		}
+	}
+
+	@GetMapping("/loginWithAnnotation")
+	public String loginWithAnnotation(@ModelAttribute LoginFormWithAnnotation form) {
+		return "session/login_with_annotation";
+	}
+
+	@PostMapping("/loginWithAnnotation")
+	public String doLoginWithAnnotation(@Valid @ModelAttribute LoginFormWithAnnotation form, BindingResult result,
+			HttpSession session) {
+		if (result.hasErrors()) {
+			return "session/login_with_annotation";
+		}
+		if (form.getUserId() == 123) {
+			session.setAttribute("userId", form.getUserId());
+			return "redirect:/";
+		} else {
+			return "session/login_with_annotation";
 		}
 	}
 

@@ -1,0 +1,8 @@
+package jp.co.sss.shop.form;
+
+import jp.co.sss.shop.util.Login;
+
+@Login
+public class LoginFormWithAnnotation {
+
+}

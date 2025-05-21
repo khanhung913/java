@@ -44,4 +44,12 @@ public class UserService {
 		}
 		this.userRepository.deleteById(id);
 	}
+
+	public boolean checkExistByEmail(String email) {
+		if (this.userRepository.findByEmail(email) != null) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

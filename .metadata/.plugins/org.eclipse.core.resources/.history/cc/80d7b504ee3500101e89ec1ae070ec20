@@ -1,0 +1,5 @@
+package jp.co.notebook.service.validator;
+
+public class RegisterValidation {
+
+}

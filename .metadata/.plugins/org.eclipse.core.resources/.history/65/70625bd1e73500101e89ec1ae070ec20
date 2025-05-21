@@ -1,0 +1,22 @@
+package jp.co.sss.shop.util;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+
+public class LoginValidator implements ConstraintValidator<Login, Object> {
+	private String userId;
+	private String password;
+
+	@Override
+	public void initialize(Login annotation) {
+		this.userId = annotation.fieldUserId();
+		this.password = annotation.fieldPassword();
+	}
+
+	@Override
+	public boolean isValid(Object value, ConstraintValidatorContext context) {
+		// TODO 自動生成されたメソッド・スタブ
+		return false;
+	}
+
+}

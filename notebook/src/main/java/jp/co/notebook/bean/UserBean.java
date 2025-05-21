@@ -4,15 +4,20 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
+import jp.co.notebook.service.validator.RegisterChecked;
 
+@RegisterChecked
 public class UserBean {
 	@NotNull(message = "メールを入力してください")
-	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$", message = "メール式を正しく入力してください")
 	private String email;
-	@NotNull
-	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "半角英字を入力")
+	@NotNull(message = "パスワードを入力してください")
+	@Pattern(regexp = "^[a-zA-Z0-9]+$", message = "半角英字で入力")
 	@Size(min = 4, message = "最低4文字")
+	@Size(max = 16, message = "最大16文字")
 	private String password;
+	@NotNull(message = "確認パスワードを入力してください")
+	private String confirmPassword;
 	@NotNull(message = "名前を入力してください")
 	@NotBlank(message = "名前を入力してください")
 	private String name;
@@ -20,7 +25,7 @@ public class UserBean {
 	public UserBean() {
 
 	}
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -43,6 +48,14 @@ public class UserBean {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 }

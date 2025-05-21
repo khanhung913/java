@@ -1,0 +1,7 @@
+package jp.co.sss.shop.util;
+
+import jakarta.validation.ConstraintValidator;
+
+public class LoginValidator implements ConstraintValidator<Login, Object> {
+
+}

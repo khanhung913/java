@@ -1,0 +1,40 @@
+package jp.co.notebook.service.validator;
+
+import org.springframework.stereotype.Service;
+
+import jakarta.validation.ConstraintValidator;
+import jakarta.validation.ConstraintValidatorContext;
+import jp.co.notebook.bean.UserBean;
+import jp.co.notebook.service.UserService;
+
+@Service
+public class RegisterValidation implements ConstraintValidator<RegisterChecked, UserBean> {
+
+	private final UserService userService;
+
+	public RegisterValidator(UserService userService) {
+		this.userService = userService;
+	}
+
+	@Override
+	public boolean isValid(UserBean user, ConstraintValidatorContext context) {
+		boolean valid = true;
+
+		if (!user.getPassword().equals(user.getCofirmPassword())) {
+			context.buildConstraintViolationWithTemplate("パスワードと合っていません。")
+					.addPropertyNode("confirmPassword")
+					.addConstraintViolation()
+					.disableDefaultConstraintViolation();
+			valid = false;
+		}
+		if (this.userService.checkExistByEmail(user.getEmail())) {
+			context.buildConstraintViolationWithTemplate("Email is exist")
+					.addPropertyNode("email")
+					.addConstraintViolation()
+					.disableDefaultConstraintViolation();
+			valid = false;
+		}
+
+		return valid;
+	}
+}

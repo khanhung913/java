@@ -22,19 +22,25 @@
 								<label for="email" class="form-label">メール</label>
 								<input type="email" class="form-control" id="email" name="email"
 									placeholder="name@example.com" th:field="*{email}">
-								<span th:errors="*{email}"></span><br>
+								<span th:errors="*{email}" class="text-danger"></span><br>
 							</div>
 							<div class="mb-3">
 								<label for="name" class="form-label">氏名</label>
 								<input type="text" class="form-control" id="name" name="name"
 									aria-describedby="emailHelp" th:field="*{name}">
-								<span th:errors="*{name}"></span><br>
+								<span th:errors="*{name}" class="text-danger"></span><br>
 							</div>
 							<div class="mb-3">
 								<label for="password" class="form-label">パスワード</label>
 								<input type="password" class="form-control" name="password" id="password"
 									th:field="*{password}">
-								<span th:errors="*{password}"></span><br>
+								<span th:errors="*{password}" class="text-danger"></span><br>
+							</div>
+							<div class="mb-3">
+								<label for="confirmPassword" class="form-label">確認パスワード</label>
+								<input type="confirmPassword" class="form-control" name="confirmPassword"
+									id="confirmPassword" th:field="*{confirmPassword}">
+								<span th:errors="*{confirmPassword}" class="text-danger"></span><br>
 							</div>
 							<div class="d-flex justify-content-around">
 								<a th:href="@{/login}" class="btn btn-primary">ログイン</a>

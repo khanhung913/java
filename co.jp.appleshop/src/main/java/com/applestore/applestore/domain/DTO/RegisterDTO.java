@@ -10,7 +10,6 @@ import jakarta.validation.constraints.Size;
 
 @RegisterChecked
 public class RegisterDTO {
-
     @NotNull
     @Email(message = "", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
     @NotEmpty(message = "Email cannot be empty")
