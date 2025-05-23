@@ -29,7 +29,7 @@
 				<div class="d-flex m-3 me-0 flex-end me-5">
 					<c:if test="${not empty pageContext.request.userPrincipal}">
 						<a href="/cart" class="position-relative me-4 my-auto"> <i
-							class="fa fa-shopping-bag fa-2x"></i> <span
+							class="fa fa-shopping-bag"></i> <span
 							class="cartTotal position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-white px-1"
 							style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
 							id="sumCart">${sessionScope.sum}</span>

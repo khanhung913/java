@@ -49,6 +49,11 @@ public class UserController {
 		return "user/login";
 	}
 
+	@GetMapping("/404-not-found")
+	public String pageNotFound() {
+		return "user/error";
+	}
+
 	@GetMapping("/homepage")
 	public String homepage(HttpSession session, Model model) {
 		String email = (String) session.getAttribute("email");

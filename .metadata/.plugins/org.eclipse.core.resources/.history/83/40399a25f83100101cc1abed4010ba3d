@@ -1,5 +1,0 @@
-package jp.co.notebook.Repository;
-
-public interface RoleRepository {
-
-}

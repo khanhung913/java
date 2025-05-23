@@ -29,4 +29,10 @@ public class IndexController {
 	public String indexForward() {
 		return "forward:/";
 	}
+
+	@RequestMapping("/layout_view")
+	public String layoutView() {
+		return "layout_view";
+	}
+
 }

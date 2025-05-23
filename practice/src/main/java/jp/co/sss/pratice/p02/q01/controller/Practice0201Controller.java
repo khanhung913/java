@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Practice0201Controller {
 	@RequestMapping("/opening")
 	public String opening() {
-		return "/Pratice2-01/opening";
+		return "/Practice2-01/opening";
 	}
+
 	@RequestMapping("/")
 	public String welcome() {
-		return "/Pratice2-01/index";
+		return "Practice2-01/index";
 	}
 }

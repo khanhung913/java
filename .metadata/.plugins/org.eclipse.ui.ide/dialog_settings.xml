@@ -12,7 +12,30 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\edu\Desktop\個人開発演習\spring_crud_name"/>
 			<item value="C:\Users\edu\Downloads\java_comprehension_exercises_volume1_3h_小野寺玄秀"/>
 		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\edu\Desktop\[PRGDE010]Spring_開発演習(社員管理システム)_ソースコード(編集用)_1.0.1\spring_crud_name"/>
+			<item value="C:\Users\edu\Desktop\010_社員管理システム_機能削減版\001_問題\[PRGDE010]Spring_開発演習(社員管理システム)_ソースコード(編集用)_1.0.1\spring_crud_name"/>
+			<item value="C:\pleiades\2023-09\workspace\spring_crud_name"/>
+			<item value="C:\Users\edu\Downloads\004_Spring_010_社員管理システム_機能削減版_20250520_112551\010_社員管理システム_機能削減版\001_問題\[PRGDE010]Spring_開発演習(社員管理システム)_ソースコード(編集用)_1.0.1\spring_crud_name"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="TOGGLE_SELECTED" value="true"/>
+		<item key="DIALOG_WIDTH" value="828"/>
+		<item key="DIALOG_HEIGHT" value="482"/>
+		<item key="DIALOG_FONT_NAME" value="1|Yu Gothic UI|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|Yu Gothic UI"/>
 	</section>
 </section>

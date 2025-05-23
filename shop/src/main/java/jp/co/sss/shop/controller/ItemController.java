@@ -1,9 +1,12 @@
 package jp.co.sss.shop.controller;
 
+import java.util.Date;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -106,6 +109,13 @@ public class ItemController {
 	@PostMapping("/items/create/complete/hidden")
 	public String itemCompleteHidden() {
 		return "items/create_complete_hidden";
+	}
+
+	@GetMapping("/items/findAllJs")
+	public String showItemListJs(Model model) {
+		model.addAttribute("items", itemRepository.findAll());
+		model.addAttribute("now", new Date());
+		return "items/item_list_js";
 	}
 
 }

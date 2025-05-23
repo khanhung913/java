@@ -1,9 +1,0 @@
-package jp.co.notebook.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import jp.co.notebook.Entity.Note;
-
-public interface NoteRepository extends JpaRepository<Note, Long> {
-
-}

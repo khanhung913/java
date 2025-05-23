@@ -1,9 +1,0 @@
-package jp.co.attendance.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import jp.co.attendance.Domain.Attendance;
-
-public interface AttendanceRepository extends JpaRepository<Attendance, Long> {
-
-}

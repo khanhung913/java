@@ -48,7 +48,6 @@ public class WebSecurityConfig {
 	@Bean
 	SpringSessionRememberMeServices rememberMeServices() {
 		SpringSessionRememberMeServices rememberMeServices = new SpringSessionRememberMeServices();
-		// optionally customize
 		rememberMeServices.setAlwaysRemember(true);
 		return rememberMeServices;
 	}
@@ -60,13 +59,9 @@ public class WebSecurityConfig {
 						.dispatcherTypeMatchers(DispatcherType.FORWARD,
 								DispatcherType.INCLUDE)
 						.permitAll()
-						.requestMatchers("/**", "/api/**", "/contact", "/product/**",
-								"/login/**",
-								"/client/**", "/css/**",
-								"/js/**",
-								"/images/**", "/register/**", "/confirmRegister/**",
-								"/success/**", "/regitrationConfirm/**",
-								"/404-not-found", "/resetPassword/**")
+						.requestMatchers(
+								"/login/**", "/register/**", "/error/**", "/404-not-found",
+								"/css/**", "/js/**")
 						.permitAll()
 						.requestMatchers("/admin/**")
 						.hasRole("Admin")
@@ -79,7 +74,7 @@ public class WebSecurityConfig {
 				.logout(logout -> logout.deleteCookies("JSESSIONID").invalidateHttpSession(true))
 				.logout(logout -> logout
 						.logoutUrl("/logout")
-						.logoutSuccessUrl("/login?logout")
+						.logoutSuccessUrl("/login")
 						.invalidateHttpSession(true)
 						.deleteCookies("JSESSIONID"))
 				.rememberMe((rememberMe) -> rememberMe
